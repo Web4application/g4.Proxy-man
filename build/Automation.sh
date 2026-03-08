@@ -19,7 +19,7 @@ CLOUDFLARE_ZONE="web4.com"
 SMTP_HOST="smtp.mailgun.org"
 SMTP_PORT=587
 SMTP_USER="postmaster@web4.com"
-SMTP_PASS="YOUR_MAILGUN_PASSWORD"
+SMTP_PASS="admin"
 
 # PostgreSQL credentials (superuser)
 PG_SUPERUSER="postgres"
