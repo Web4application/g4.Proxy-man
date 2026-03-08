@@ -6,7 +6,6 @@ from fastapi.security import HTTPBasic, HTTPBasicCredentials
 import sqlite3, qrcode, os
 from cert_core import generate_certificate, export_certificate
 from mailer import send_certificate_email
-
 app = FastAPI()
 security = HTTPBasic()
 templates = Jinja2Templates(directory="templates")
