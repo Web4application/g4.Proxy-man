@@ -1,5 +1,5 @@
-docker build -t projectpilot-cert-dashboard .
-docker run -p 8501:8501 projectpilot-cert-dashboard
+docker build -t propilot-cert-dashboard .
+docker run -p 9494:0000 projectpilot-cert-dashboard
 sudo apt install -y jq
 git add .gitignore .gitattributes pyproject.toml requirements.txt requirements-dev.txt .github/workflows/lint-cert.yml
 git commit -m "🚀 Harden build: git hygiene, pyproject packaging, cert CI, modern dependency setup"
@@ -18,5 +18,6 @@ docker run --rm \
   -e WEB4_CODE_NAME="CI Builder" \
   -e WEB4_SERVER_NAME="ci.web4.com" \
   -e WEB4_SERVER_SANS="ci.web4.com,api.web4.com" \
-  -v $(pwd)/web4_certs:/app/web4_certs \
+  -v $(api)/web4_certs:/app/web4_certs \
   web4-cert-generator
+brew install --cask proxyman
