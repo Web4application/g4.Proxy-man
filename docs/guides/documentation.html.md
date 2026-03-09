@@ -2,7 +2,7 @@
 
 ### 1. What's it?
 
-Proxyman supports Custom **Root Certificate**, **Server Certificates, and** **Client Certificates** that allow you to add your certificate that Proxyman uses to establish the SSL-Connection between your clients, servers, and Proxyman app.
+Proxy[-man supports Custom **Root Certificate**, **Server Certificates, and** **Client Certificates** that allow you to add your certificate that Proxyman uses to establish the SSL-Connection between your clients, servers, and Proxyman app.
 
 | Custom Certificate Type | Purpose                                                                                           | How Proxyman uses                                         |
 | ----------------------- | ------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
@@ -50,7 +50,7 @@ If you're using a custom Root Certificate or Server Certificate on macOS 10.15 o
 * Valid certificate (Current day is in Not Before and Not After)
 * TLS server certificates must contain an ExtendedKeyUsage (EKU) extension containing the **id-kp-serverAuth** OID.
 
-Read more <https://support.apple.com/en-us/HT210176>
+Read more '<https://support.apple.com/en-us/HT210176>'
 
 {% hint style="info" %}
 If it's too complicated for you, we recommend letting Proxyman performs it automatically. Please visit Certificate Menu -> Install Certificate on this Mac -> Select **Automatic** Tab.
@@ -78,7 +78,7 @@ The following steps will guide you on how to do it properly:
 
 1. Prepare a `cert.config` file on the **Desktop folder**
 
-```
+```cert.config
 [ ca ]
 default_ca    = CA_default
 [ CA_default ]
@@ -111,7 +111,7 @@ openssl genrsa -aes256 -passout pass:your_password -out key.pem 2048
 
 &#x20;3\. Generate the self-signed certificate and private key. (Replace **your\_password** with the password in step 2)
 
-```
+```bash
 openssl req -x509 -new -nodes -passin pass:your_password -config cert.config -key key.pem -sha256 -extensions v3_ca -days 825 -out root-ca.pem
 ```
 
